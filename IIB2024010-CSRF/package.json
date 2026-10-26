@@ -1,0 +1,16 @@
+{
+  "name": "csrf-demo",
+  "version": "1.0.0",
+  "description": "Intentionally vulnerable CSRF demo for Cyber Security assignment – local lab use only.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:secure": "cross-env SECURE=true node server.js",
+    "attacker": "node attacker/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "cross-env": "^7.0.3"
+  }
+}
