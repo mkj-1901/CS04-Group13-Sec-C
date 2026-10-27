@@ -1,0 +1,15 @@
+{
+  "name": "stored-xss-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Loopback-only stored XSS lab for the Web Server Security assignment.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:secure": "node server.js --secure",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
