@@ -138,7 +138,6 @@ The `OR '1'='1'` makes the `WHERE` clause always true, and `--` comments out the
 - **Least Privilege:** The database user account used by the application should have only the minimum permissions required (e.g., `SELECT` on the users table), so even a successful injection cannot `DROP TABLE` or access other data.
 - **Web Application Firewall (WAF):** A WAF can detect and block common injection patterns (`' OR`, `UNION SELECT`, `--`, etc.) at the network layer before they reach the application. However, WAFs can be bypassed and should not be the sole defence.
 - **Hashed Passwords:** In a production system, passwords should be stored as salted hashes (e.g., bcrypt). Even if an attacker extracts data via injection, they cannot recover plaintext passwords.
-- **ORM / Query Builders:** Using an ORM (like Sequelize or Prisma) or query builder (like Knex.js) generates parameterized queries by default, making injection significantly harder to introduce accidentally.
 
 ---
 
@@ -147,14 +146,6 @@ The `OR '1'='1'` makes the `WHERE` clause always true, and `--` comments out the
 | Member Name  | Roll Number | Category      | Variant Implemented       |
 |--------------|-------------|---------------|---------------------------|
 | Krish Dhaked | IIB2024008  | SQL Injection | Authentication Bypass     |
-
----
-
-## 📚 References
-
-- OWASP SQL Injection Prevention Cheat Sheet: [https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
-- OWASP Testing Guide — SQL Injection: [https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05-Testing_for_SQL_Injection)
-- MDN: Parameterized Statements: [https://developer.mozilla.org/en-US/docs/Glossary/SQL_injection](https://developer.mozilla.org/en-US/docs/Glossary/SQL_injection)
 
 ---
 
