@@ -123,14 +123,6 @@ page can silently trigger the transfer using an `<img>` tag.
 
 ---
 
-## 👥 Ownership Declaration
-
-| Member Name | Roll Number | Category | Variant Implemented |
-|---|---|---|---|
-| Mayank Kumar Jha | IIB2024010 | CSRF | GET-based forged action |
-
----
-
 ## 📚 References
 
 - OWASP CSRF Prevention Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html
