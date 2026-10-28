@@ -136,7 +136,6 @@ The `OR '1'='1'` makes the `WHERE` clause always true, and `--` comments out the
 
 - **Stored Procedures:** Moving SQL logic into stored procedures on the database server limits what an application can execute, reducing the attack surface for injection.
 - **Least Privilege:** The database user account used by the application should have only the minimum permissions required (e.g., `SELECT` on the users table), so even a successful injection cannot `DROP TABLE` or access other data.
-- **Web Application Firewall (WAF):** A WAF can detect and block common injection patterns (`' OR`, `UNION SELECT`, `--`, etc.) at the network layer before they reach the application. However, WAFs can be bypassed and should not be the sole defence.
 - **Hashed Passwords:** In a production system, passwords should be stored as salted hashes (e.g., bcrypt). Even if an attacker extracts data via injection, they cannot recover plaintext passwords.
 
 ---
